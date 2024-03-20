@@ -1,10 +1,11 @@
 {
-  "name": "project00_calculator-with-inquirer-in-typescript-",
+  "name": "p00-gov-calculator",
   "version": "1.0.0",
   "main": "samad.js",
   "type": "module",
+  "bin" : "samad.js",
   "scripts": {
-    "start": "node samad.js",
+    
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
