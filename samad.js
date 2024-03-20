@@ -1,37 +1,39 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var inquirer_1 = require("inquirer");
-var answers = await inquirer_1.default.prompt([
-    {
-        message: "Enter 1st number",
-        type: "number",
-        name: "num1"
-    },
-    {
-        message: "Enter 2nd number",
-        type: "number",
-        name: "num2"
-    },
-    {
-        message: "select Operator",
-        type: "list",
-        name: "operator",
-        choices: ["+", "-", "*", "/"]
-    },
-]);
-// condition Statement logic
-if (answers.operator === "+") {
-    console.log(answers.num1 + answers.num2);
+#! /usr/bin/env node
+import inquirer from "inquirer";
+async function main() {
+    const answers = await inquirer.prompt([
+        {
+            message: "Enter 1st number",
+            type: "number",
+            name: "num1"
+        },
+        {
+            message: "Enter 2nd number",
+            type: "number",
+            name: "num2"
+        },
+        {
+            message: "select Operator",
+            type: "list",
+            name: "operator",
+            choices: ["Addition", "Subtraction", "Multiplication", "Division",]
+        },
+    ]);
+    // condition Statement logic
+    if (answers.operator === "Addition") {
+        console.log(answers.num1 + answers.num2);
+    }
+    else if (answers.operator === "Subtraction") {
+        console.log(answers.num1 - answers.num2);
+    }
+    else if (answers.operator === "Multiplication") {
+        console.log(answers.num1 * answers.num2);
+    }
+    else if (answers.operator === "Division") {
+        console.log(answers.num1 / answers.num2);
+    }
+    else {
+        console.log("Invalid Operator");
+    }
 }
-else if (answers.operator === "-") {
-    console.log(answers.num1 - answers.num2);
-}
-else if (answers.operator === "*") {
-    console.log(answers.num1 * answers.num2);
-}
-else if (answers.operator === "/") {
-    console.log(answers.num1 / answers.num2);
-}
-else {
-    console.log("Invalid Operator");
-}
+main().catch(error => console.error(error));

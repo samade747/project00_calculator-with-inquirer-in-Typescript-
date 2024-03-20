@@ -1,6 +1,6 @@
 {
   "name": "p00-gov-calculator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "samad.js",
   "type": "module",
   "bin" : "samad.js",
